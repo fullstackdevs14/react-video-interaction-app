@@ -1,0 +1,92 @@
+// Vendors
+@import '~normalize.css/normalize.css';
+@import '~video.js/dist/video-js.css';
+
+@import 'mixins';
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  box-sizing: border-box;
+}
+
+.app {
+  height: 100vh;
+}
+
+.main {
+  padding: 32px;
+}
+
+.video-player {
+  &-overlay {
+    position: relative;
+
+    [data-vjs-player='true'] {
+      width: 100%;
+      padding-top: 56.25%;
+    }
+  }
+
+  &-actions {
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+  }
+
+  &-comment-list {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 240px;
+    padding: 30px 10px;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    &__item {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 10px;
+      border-radius: 10px;
+      margin-left: 120%;
+      animation: slide 0.5s forwards;
+      color: white;
+      font-family: 'Roboto';
+      box-shadow: 0 0 4px 2px rgb(255 255 255 / 50%);
+      margin-bottom: 10px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &-point {
+    @include ripples(rgb(255, 0, 0), 20, 6);
+
+    position: absolute;
+  }
+}
+
+.tabpanel {
+  max-height: 500px;
+  height: 100%;
+  overflow: auto;
+}
+
+@keyframes slide {
+  100% {
+    margin-left: 0;
+  }
+}

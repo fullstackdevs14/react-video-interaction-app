@@ -1,18 +1,23 @@
 {
   "env": {
     "browser": true,
-    "es6": true
+    "es6": true,
+    "node": true
   },
   "parser": "babel-eslint",
   "extends": [
     "plugin:react/recommended",
     "prettier",
+    "react-app",
     "react-app/jest"
   ],
   "globals": {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly",
-    "React": "readonly"
+    "React": "readonly",
+    "document": true,
+    "window": true,
+    "localStorage": true
   },
   "parserOptions": {
     "ecmaFeatures": {
@@ -23,7 +28,8 @@
   },
   "plugins": [
     "react",
-    "prettier"
+    "prettier",
+    "react-hooks"
   ],
   "rules": {
     "prettier/prettier": "error",
