@@ -22,7 +22,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
-    "lint": "eslint --cache --fix --ext .js,.jsx src"
+    "lint": "eslint --cache --fix --ext .js,.jsx src",
+    "deploy": "yarn build && firebase deploy"
   },
   "browserslist": {
     "production": [
